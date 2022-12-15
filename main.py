@@ -4,12 +4,12 @@ from tkinter import *
 from tkinter import filedialog
 
 # Get local file
-localMedia = vlc.MediaPlayer()
+# localMedia = vlc.MediaPlayer()
 networkMedia = vlc.MediaPlayer()
-filepath = filedialog.askopenfilename(initialdir="C:\\Users",
-                                          title="Open file okay?",
-                                          filetypes= (("media","*.mp4"),
-                                          ("all files","*.*")))
+# filepath = filedialog.askopenfilename(initialdir="C:\\Users",
+#                                           title="Open file okay?",
+#                                           filetypes= (("media","*.mp4"),
+#                                           ("all files","*.*")))
 
 # Getting stream data
 # streamLoc = str(input("Enter stream location: "))
@@ -22,18 +22,18 @@ networkMedia.play()
 
 # Starting the player
 media = vlc.Media(filepath)
-localMedia.set_media(media)
-localMedia.play()
-sleep(5)
+# localMedia.set_media(media)
+# localMedia.play()
+# sleep(5)
 
 networkMedia.audio_set_volume(0)
 networkMedia.video_set_scale(0.1)
-localMedia.set_position(0.5)
-localMedia.audio_set_volume(1)
+# localMedia.set_position(0.5)
+# localMedia.audio_set_volume(1)
 
 # Player Controls after this
-while localMedia.is_playing():
-     # sleep(2)
+while networkMedia.is_playing():
+     sleep(5)
      print(networkMedia.get_position())
-     print(localMedia.get_position())
+     # print(localMedia.get_position())
      # localMedia.set_position(networkMedia.get_position())
